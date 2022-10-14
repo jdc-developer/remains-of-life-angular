@@ -1,0 +1,47 @@
+@import "../../../../assets/css/variables";
+
+.title-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .date {
+        font-style: italic;
+        font-size: 14px;
+    }
+}
+
+.article-content {
+    img {
+        float: left;
+        position: relative;
+        right: 15px;
+    }
+}
+
+@media #{$general-phone} {
+    header {
+        height: 500px;
+    }
+}
+
+@media #{$phone-only} {
+    .article-content {
+        text-align: center;
+
+        img {
+            float: unset;
+            right: 0;
+        }
+    }
+
+    .title-date {
+        display: initial;
+    
+        .date {
+            margin-top: 5px;
+            display: block;
+            text-align: center;
+        }
+    }
+}

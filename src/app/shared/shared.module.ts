@@ -4,12 +4,16 @@ import { NgModule } from '@angular/core';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+import { SideContentComponent } from './components/side-content/side-content.component';
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SideContentComponent
+  ],
   imports: [
     CommonModule,
     TranslateModule.forRoot({
@@ -23,6 +27,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   exports: [
     CommonModule,
+    SideContentComponent,
     TranslateModule
   ]
 })
