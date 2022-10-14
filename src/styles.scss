@@ -4,7 +4,8 @@
 @import "assets/css/position";
 @import "assets/css/variables";
 
-@import "~flexboxgrid/css/flexboxgrid.css";
+@import "~flexboxgrid/css/flexboxgrid.min.css";
+@import "~animate.css/animate.min.css";
 
 body {
     color: $white;
