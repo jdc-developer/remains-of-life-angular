@@ -1,0 +1,46 @@
+@import "functions";
+@import "variables";
+
+.btn-language {
+    border: none;
+    background-color: transparent;
+    width: 20px;
+    height: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include fade-in(.5s);
+
+    &:hover {
+        border: 1px solid $white;
+    }
+}
+
+.btn {
+    border: none;
+    padding: 5px 18px;
+    font-size: 23px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Magnificent', sans-serif;
+    @include fade-in(.2s);
+    box-shadow: 0 4px 8px 0 rgba(60,60,60,.8);
+}
+
+.btn-primary {
+    background-color: $white;
+    color: $primary-color;
+
+    &:hover {
+        background-color: $color-accent;
+        color: $white;
+    }
+}
+
+.btn-portuguese {
+    background-image: url('../images/brazil.jpg');
+}
+
+.btn-english {
+    background-image: url('../images/usa.jpg');
+}
