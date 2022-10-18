@@ -2,7 +2,11 @@
     <div class="container">
         <div class="row ">
             <div class="col-md-12">
-                <div class="mobile-menu-icon animate__animated"></div>
+                <div class="mobile-menu-icon animate__animated" (click)="toggleMobileMenu()"
+                    [ngClass]="{
+                        'menu-open': isMobileMenuOpen,
+                        'animate__bounceIn': isMobileMenuOpen
+                    }"></div>
                 <ul>
                     <li *ngFor="let route of routes">
                         <a [routerLink]="route.path">{{ route.translatorKey | translate }}</a>
@@ -19,13 +23,17 @@
         </div>
     </div>
 </nav>
-<div class="mobile-menu animate__animated">
+<div class="mobile-menu animate__animated" #mobileMenu
+    [ngClass]="{
+        'animate__slideInLeft': isMobileMenuOpen,
+        'animate__slideOutLeft': !isMobileMenuOpen
+    }">
     <ul>
         <li *ngFor="let route of routes">
             <a [routerLink]="route.path">{{ route.translatorKey | translate }}</a>
         </li>
         <li>
-            <a href="#footer" data-i18n="contact"></a>
+            <a href="#footer">{{ 'CONTACT' | translate }}</a>
         </li>
     </ul>
 </div>

@@ -2,7 +2,7 @@
 <div class="content">
   <div class="content-box">
       <div class="container">
-        <router-outlet></router-outlet>
+        <router-outlet (activate)="onActivate($event)"></router-outlet>
       </div>
   </div>
 </div>
