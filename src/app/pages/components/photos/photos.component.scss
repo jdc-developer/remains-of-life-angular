@@ -1,0 +1,25 @@
+@import "../../../../assets/css/functions";
+@import "../../../../assets/css/variables";
+
+.photos {
+    .img-album {
+        max-width: 180px;
+        max-height: 250px;
+        border: 5px solid $white;
+        @include fade-in(.4s);
+
+        &:hover {
+            border-color: $light-gray;
+        }
+    }
+}
+
+@media #{$desktop} {
+    .photos {
+        .img-album {
+            max-width: 150px;
+            max-height: 250px;
+            border: 5px solid $white;
+        }
+    }
+}
