@@ -5,6 +5,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { SideContentComponent } from './components/side-content/side-content.component';
+import { EN_LOCALE } from './constants/constants';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -17,7 +18,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   imports: [
     CommonModule,
     TranslateModule.forRoot({
-      defaultLanguage: 'pt-BR',
+      defaultLanguage: EN_LOCALE,
       loader: {
           provide: TranslateLoader,
           useFactory: HttpLoaderFactory,
