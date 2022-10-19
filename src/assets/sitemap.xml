@@ -5,19 +5,15 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>https://remainsoflife.com.br/videos.html</loc>
+    <loc>https://remainsoflife.com.br/videos</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>https://remainsoflife.com.br/biography.html</loc>
+    <loc>https://remainsoflife.com.br/biography</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>https://remainsoflife.com.br/photos.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://remainsoflife.com.br/index.html</loc>
+    <loc>https://remainsoflife.com.br/photos</loc>
     <changefreq>daily</changefreq>
   </url>
 </urlset>
