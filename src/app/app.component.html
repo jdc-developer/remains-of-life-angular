@@ -1,9 +1,11 @@
-<app-navbar></app-navbar>
-<div class="content">
-  <div class="content-box">
-      <div class="container">
-        <router-outlet (activate)="onActivate($event)"></router-outlet>
-      </div>
+<div (click)="checkMobileNavbar($event)">
+  <app-navbar></app-navbar>
+  <div class="content">
+    <div class="content-box">
+        <div class="container">
+          <router-outlet (activate)="onActivate($event)"></router-outlet>
+        </div>
+    </div>
   </div>
+  <app-footer></app-footer>
 </div>
-<app-footer></app-footer>

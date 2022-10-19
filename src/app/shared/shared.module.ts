@@ -6,6 +6,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { SideContentComponent } from './components/side-content/side-content.component';
 import { EN_LOCALE } from './constants/constants';
+import { MobileMenuService } from './services/mobile-menu.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -30,6 +31,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     CommonModule,
     SideContentComponent,
     TranslateModule
+  ],
+  providers: [
+    MobileMenuService
   ]
 })
 export class SharedModule { }

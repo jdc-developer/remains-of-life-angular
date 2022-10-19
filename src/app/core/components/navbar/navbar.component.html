@@ -4,8 +4,8 @@
             <div class="col-md-12">
                 <div class="mobile-menu-icon animate__animated" (click)="toggleMobileMenu()"
                     [ngClass]="{
-                        'menu-open': isMobileMenuOpen,
-                        'animate__bounceIn': isMobileMenuOpen
+                        'menu-open': mobileMenuService.isMobileMenuOpen,
+                        'animate__bounceIn': mobileMenuService.isMobileMenuOpen
                     }"></div>
                 <ul>
                     <li *ngFor="let route of routes">
@@ -25,8 +25,8 @@
 </nav>
 <div class="mobile-menu animate__animated" #mobileMenu
     [ngClass]="{
-        'animate__slideInLeft': isMobileMenuOpen,
-        'animate__slideOutLeft': !isMobileMenuOpen
+        'animate__slideInLeft': mobileMenuService.isMobileMenuOpen,
+        'animate__slideOutLeft': !mobileMenuService.isMobileMenuOpen
     }">
     <ul>
         <li *ngFor="let route of routes">

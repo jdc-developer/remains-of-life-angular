@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { EN_LOCALE, PT_BR_LOCALE } from 'src/app/shared/constants/constants';
+import { MobileMenuService } from 'src/app/shared/services/mobile-menu.service';
 
 import { Route } from '../models/route';
 
@@ -20,14 +21,17 @@ export class NavbarComponent implements OnInit {
         'pt-TL', 'pt-CV', 'pt'];
   routes: Array<Route> = [];
 
-  isMobileMenuOpen: boolean = false;
+  mobileMenuService: MobileMenuService;
 
   constructor(private translateService: TranslateService) {
+    this.mobileMenuService = MobileMenuService.getInstance();
     const userLang = navigator.language;
 
     if (this.portugueseLocales.includes(userLang)) {
       this.translateService.use(PT_BR_LOCALE);
     }
+
+    this.mobileMenuService.closeMobileMenuEvent.subscribe(() => this._changeMobileMenuClass())
   }
 
   ngOnInit(): void {
@@ -52,15 +56,8 @@ export class NavbarComponent implements OnInit {
   }
 
   toggleMobileMenu(): void {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
-    const nativeElement = this.mobileMenu?.nativeElement;
-    if (nativeElement.classList.contains(this.ALIGN_CENTER_CLASS)) {
-      setTimeout(() => {
-        nativeElement.classList.remove(this.ALIGN_CENTER_CLASS);
-      }, 700);
-    } else {
-      nativeElement.classList.add(this.ALIGN_CENTER_CLASS);
-    }
+    this.mobileMenuService.isMobileMenuOpen = !this.mobileMenuService.isMobileMenuOpen;
+    this.mobileMenuService.closeMobileMenuEvent.emit();
   }
 
   changeToPortuguese(): void {
@@ -69,6 +66,17 @@ export class NavbarComponent implements OnInit {
 
   changeToEnglish(): void {
     this.translateService.use(EN_LOCALE);
+  }
+
+  private _changeMobileMenuClass(): void {
+    const nativeElement = this.mobileMenu?.nativeElement;
+    if (nativeElement.classList.contains(this.ALIGN_CENTER_CLASS)) {
+      setTimeout(() => {
+        nativeElement.classList.remove(this.ALIGN_CENTER_CLASS);
+      }, 700);
+    } else {
+      nativeElement.classList.add(this.ALIGN_CENTER_CLASS);
+    }
   }
 
 }
