@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
 
+import { ConsumedPlaythroughComponent } from './components/consumed-playthrough/consumed-playthrough.component';
+import { ForlornEpComponent } from './components/forlorn-ep/forlorn-ep.component';
 import { NewAlbumArticleComponent } from './components/new-album-article/new-album-article.component';
 import { NewSingleArticleComponent } from './components/new-single-article/new-single-article.component';
-import { ConsumedPlaythroughComponent } from './components/consumed-playthrough/consumed-playthrough.component';
 
 
 @NgModule({
   declarations: [
     ConsumedPlaythroughComponent,
     NewSingleArticleComponent,
-    NewAlbumArticleComponent
+    NewAlbumArticleComponent,
+    ForlornEpComponent
   ],
   imports: [
     SharedModule
@@ -18,7 +20,8 @@ import { ConsumedPlaythroughComponent } from './components/consumed-playthrough/
   exports: [
     ConsumedPlaythroughComponent,
     NewAlbumArticleComponent,
-    NewSingleArticleComponent
+    NewSingleArticleComponent,
+    ForlornEpComponent
   ]
 })
 export class ArticlesModule { }
