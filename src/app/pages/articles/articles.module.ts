@@ -3,6 +3,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
 import { ConsumedPlaythroughComponent } from './components/consumed-playthrough/consumed-playthrough.component';
 import { ForlornEpComponent } from './components/forlorn-ep/forlorn-ep.component';
+import { GuiltyLyricVideoComponent } from './components/guilty-lyric-video/guilty-lyric-video.component';
 import { NewAlbumArticleComponent } from './components/new-album-article/new-album-article.component';
 import { NewSingleArticleComponent } from './components/new-single-article/new-single-article.component';
 
@@ -12,7 +13,8 @@ import { NewSingleArticleComponent } from './components/new-single-article/new-s
     ConsumedPlaythroughComponent,
     NewSingleArticleComponent,
     NewAlbumArticleComponent,
-    ForlornEpComponent
+    ForlornEpComponent,
+    GuiltyLyricVideoComponent
   ],
   imports: [
     SharedModule
@@ -21,7 +23,8 @@ import { NewSingleArticleComponent } from './components/new-single-article/new-s
     ConsumedPlaythroughComponent,
     NewAlbumArticleComponent,
     NewSingleArticleComponent,
-    ForlornEpComponent
+    ForlornEpComponent,
+    GuiltyLyricVideoComponent
   ]
 })
 export class ArticlesModule { }
